@@ -1,0 +1,146 @@
+/* Geral */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+input,
+select {
+  padding: 0.25rem 0.5rem;
+}
+
+.form-control input, textarea{
+  margin-top: 3px;
+  width: 30rem;
+}
+
+.form-control button{
+margin-top: 3px;
+}
+
+.todo-container{
+  background-color: gray;
+  max-width: 450px;
+  margin: 3rem auto 0;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 1.5rem;
+
+}
+
+
+/* Header */
+
+.todo-container header{
+  text-align: center;
+  padding: 0 1rem 0rem;
+  border-bottom: 1px solid #ccc;
+}
+
+
+ /* Form */
+
+#todo-form, #edit-form{
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#todo-form p, #edit-form p {
+margin-bottom: 0.5rem;
+}
+
+.form-control, input{
+  margin-right: 0.3rem;
+}
+
+#cancel-edit-btn{
+  margin-top: 0.5rem;
+}
+
+.input-control, .textarea-control{
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+/* toolbar */
+
+#toolbar {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+
+#toolbar h4 {
+  margin-bottom: 0.5rem;
+}
+
+#toolbar input{
+  margin-right: 0.3rem;
+}
+
+#search{
+  /* border-right: 1px solid #ddd; */
+  padding-right: 1rem;
+  margin-right: 2rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  }
+
+  #search form {
+    display: flex;
+  }
+
+  #search input {
+    width: 100%;
+    margin-right: 0.3rem;
+  }
+
+  .filter{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter select{
+    flex: 1;
+  }
+
+
+  /* Todo List */
+
+
+  .todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+  .todo h3{
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+  .todo button{
+  margin-left: 0.4rem;
+}
+
+.done{
+  background-color: #424242;
+}
+
+.done h3{
+  color: #fff;
+  text-decoration: line-through;
+  font-style: italic;
+}

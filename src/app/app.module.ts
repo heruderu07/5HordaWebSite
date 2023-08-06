@@ -15,6 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MembersComponent } from './components/members/members.component';
+import { TaskManagerComponent } from './components/task-manager/task-manager.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MembersComponent } from './components/members/members.component';
     FooterComponent,
     HeaderComponent,
     MainNavComponent,
-    MembersComponent
+    MembersComponent,
+    TaskManagerComponent
   ],
   imports: [
     BrowserModule,
