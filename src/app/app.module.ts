@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MembersComponent } from './components/members/members.component';
 import { TaskManagerComponent } from './components/task-manager/task-manager.component';
 
+import { KeysPipe } from './pipes/Key.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TaskManagerComponent } from './components/task-manager/task-manager.com
     HeaderComponent,
     MainNavComponent,
     MembersComponent,
-    TaskManagerComponent
+    TaskManagerComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

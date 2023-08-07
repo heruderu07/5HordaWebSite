@@ -81,9 +81,30 @@
       </select>
     </div>
   </div>
-  <div id="todo-list">
-    <!-- exemplo -->
-    <div class="todo done">
+
+  <div id="todo-list" *ngFor=" let k of data | keys ">
+
+    <div class="todo">
+
+          <h3><ul>{{ data[k].map }}</ul></h3>
+       <!--    <td scope="row"><h3>{{ data[k].players }}</h3></td>
+          <td scope="row"><h3>{{ data[k].requirements }}</h3></td>
+          <td scope="row"><h3>{{ data[k].observation }}</h3></td> -->
+
+
+    <button class="finish-todo">
+      <mat-icon class="finish-todo">check_circle_outline</mat-icon>
+    </button>
+    <button class="edit-todo">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button class="remove-todo">
+      <mat-icon>remove_circle_outline</mat-icon>
+    </button>
+  </div>
+
+
+   <!--  <div class="todo done">
       <h3>Cruzamento 3x players</h3>
       <button class="finish-todo">
         <mat-icon class="finish-todo">check_circle_outline</mat-icon>
@@ -105,7 +126,6 @@
       </button>
       <button class="remove-todo">
         <mat-icon>remove_circle_outline</mat-icon>
-      </button>
+      </button> -->
     </div>
-  </div>
-</div>
+
