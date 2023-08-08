@@ -1,5 +1,5 @@
 export interface Task {
-  Key$: string;
+  Key$?: string;
   map: string;
   players: string;
   requirements: string;

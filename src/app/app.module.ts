@@ -18,6 +18,7 @@ import { MembersComponent } from './components/members/members.component';
 import { TaskManagerComponent } from './components/task-manager/task-manager.component';
 
 import { KeysPipe } from './pipes/Key.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { KeysPipe } from './pipes/Key.pipe';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

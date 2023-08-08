@@ -7,7 +7,8 @@
     <div class="form-control">
       <div class="filter">
         <h4>Mapa:</h4>
-        <select id="filter-select">
+        <!-- Aqui ficar atento pois onde temos um select penso que poderia ser substituido por um input -->
+        <select id="filter-select" name="map">
           <option value="cruzamento">Cruzamento</option>
           <option value="fcarvalho">Floresta de Carvalho</option>
           <option value="pbauxita">Pedreira de Bauxita</option>
@@ -17,35 +18,33 @@
       </div>
       <div class="input-control">
         <input
+          name="players"
           type="text"
           id="names-input"
           placeholder="Informe os nomes dos participantes"
+          [(ngModel)]="dataTask.players"
         />
-        <button type="submit">
-          <mat-icon>send</mat-icon>
-        </button>
       </div>
       <div class="input-control">
         <input
           type="text"
+          name="requirements"
           id="requirements-input"
           placeholder="Informe os requisitos para a missão"
+          [(ngModel)]="dataTask.requirements"
         />
-        <button type="submit">
-          <mat-icon>send</mat-icon>
-        </button>
       </div>
 
       <div class="input-control">
         <input
           type="text"
           id="obs-input"
-          placeholder="Comentários adicionais"
+          name="observation"
+          placeholder="Comentários adicionais Teste"
+          [(ngModel)]="dataTask.observation"
         />
-        <button type="submit">
-          <mat-icon>send</mat-icon>
-        </button>
       </div>
+      <button mat-button="raised" color="accent" type="submit" (click)="post()" >Submit</button>
     </div>
   </form>
   <form id="edit-form" class="hide">
@@ -53,7 +52,7 @@
     <div class="form-control">
       <div class="input-control">
         <input type="text" id="edit-input" />
-        <button type="submit">
+        <button type="submit" >
           <mat-icon>send</mat-icon>
         </button>
       </div>
@@ -82,29 +81,23 @@
     </div>
   </div>
 
-  <div id="todo-list" *ngFor=" let k of data | keys ">
-
+  <div id="todo-list" *ngFor="let k of data | keys">
     <div class="todo">
+      <h3>{{ data[k].map }} </h3>
+      <br />
+      <h3>{{ data[k].observation }}</h3>
+      <button class="finish-todo">
+        <mat-icon class="finish-todo">check_circle_outline</mat-icon>
+      </button>
+      <button class="edit-todo">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button class="remove-todo">
+        <mat-icon>remove_circle_outline</mat-icon>
+      </button>
+    </div>
 
-          <h3><ul>{{ data[k].map }}</ul></h3>
-       <!--    <td scope="row"><h3>{{ data[k].players }}</h3></td>
-          <td scope="row"><h3>{{ data[k].requirements }}</h3></td>
-          <td scope="row"><h3>{{ data[k].observation }}</h3></td> -->
-
-
-    <button class="finish-todo">
-      <mat-icon class="finish-todo">check_circle_outline</mat-icon>
-    </button>
-    <button class="edit-todo">
-      <mat-icon>edit</mat-icon>
-    </button>
-    <button class="remove-todo">
-      <mat-icon>remove_circle_outline</mat-icon>
-    </button>
-  </div>
-
-
-   <!--  <div class="todo done">
+    <!--  <div class="todo done">
       <h3>Cruzamento 3x players</h3>
       <button class="finish-todo">
         <mat-icon class="finish-todo">check_circle_outline</mat-icon>
@@ -127,5 +120,5 @@
       <button class="remove-todo">
         <mat-icon>remove_circle_outline</mat-icon>
       </button> -->
-    </div>
-
+  </div>
+</div>

@@ -1,22 +1,36 @@
-import { Injectable } from "@angular/core";
-import axios from "axios";
-import { Console } from "console";
+import { Injectable } from '@angular/core';
+import axios, { AxiosHeaders } from 'axios';
+import { Task } from './../interfaces/task.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-export class AxiosService{
-  urltasks:string = "https://horda-a5c2f-default-rtdb.firebaseio.com/tasks.json";
-  urltaskroot: string = "https://horda-a5c2f-default-rtdb.firebaseio.com/tasks";
-  constructor(){
-
+export class AxiosService {
+  urltasks: string =    'https://horda-a5c2f-default-rtdb.firebaseio.com/tasks.json';
+  urltaskroot: string = 'https://horda-a5c2f-default-rtdb.firebaseio.com/tasks';
+  constructor() {}
+  get() {
+    return axios
+      .get(this.urltasks)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
-  get(){
-    return axios.get(this.urltasks).then( res =>{
-      console.log(res.data)
-      return res.data;
-    }).catch((error) => {console.log(error);
-    })
+  post(task: Task) {
+    let body = JSON.stringify(task);
+    //antes estava Headers, alterei para AxiosHeaders pq o headers em baixo estava apontando erro
+    let headers = new AxiosHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return axios.post(this.urltasks, body, { headers }).then((resp) => {
+        console.log(resp);
+        return resp;
+      }).catch((error) => {
+        console.log(error);
+      });
   }
 }
