@@ -44,10 +44,11 @@
           [(ngModel)]="dataTask.observation"
         />
       </div>
-      <button mat-button="raised" color="accent" type="submit" (click)="post()" >Submit</button>
+      <button mat-button="raised" color="accent" type="submit" (click)="post()" >Submit true</button>
+      <button mat-button="raised" color="accent" type="submit" (click)="put()" >Submit false</button>
     </div>
   </form>
-  <form id="edit-form" class="hide">
+<!--   <form id="edit-form" class="hide">
     <p>Edite a tarefa</p>
     <div class="form-control">
       <div class="input-control">
@@ -58,7 +59,7 @@
       </div>
     </div>
     <button id="cancel-edit-btn">Cancelar</button>
-  </form>
+  </form> -->
   <div id="toolbar">
     <div id="search">
       <h4>Pesquisar:</h4>
@@ -89,36 +90,12 @@
       <button class="finish-todo">
         <mat-icon class="finish-todo">check_circle_outline</mat-icon>
       </button>
-      <button class="edit-todo">
+      <button class="edit-todo" [routerLink]="['/task-manager', k]" >
         <mat-icon>edit</mat-icon>
       </button>
       <button class="remove-todo">
         <mat-icon>remove_circle_outline</mat-icon>
       </button>
     </div>
-
-    <!--  <div class="todo done">
-      <h3>Cruzamento 3x players</h3>
-      <button class="finish-todo">
-        <mat-icon class="finish-todo">check_circle_outline</mat-icon>
-      </button>
-      <button class="edit-todo">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button class="remove-todo">
-        <mat-icon>remove_circle_outline</mat-icon>
-      </button>
-    </div>
-    <div class="todo">
-      <h3>Cruzamento 3x players</h3>
-      <button class="finish-todo">
-        <mat-icon class="finish-todo">check_circle_outline</mat-icon>
-      </button>
-      <button class="edit-todo">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button class="remove-todo">
-        <mat-icon>remove_circle_outline</mat-icon>
-      </button> -->
   </div>
 </div>

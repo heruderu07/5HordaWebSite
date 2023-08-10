@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 {path: 'members', component: MembersComponent},
-{path: 'task-manager', component: TaskManagerComponent}
+{path: 'task-manager/:id', component: TaskManagerComponent}
 
 ];
 

@@ -1,6 +1,8 @@
 import { AxiosService } from './../../service/Axios.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/interfaces/task.interface';
+import { ActivatedRoute } from '@angular/router';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-task-manager',
@@ -17,11 +19,21 @@ export class TaskManagerComponent implements OnInit {
     observation: ''
   };
 
-  constructor(private service: AxiosService) {}
+
+
+  constructor(private service: AxiosService, private ActivedRouter: ActivatedRoute) {
+    this.ActivedRouter.params.subscribe((resp:any) => {
+      console.log(resp.id);
+      this.service.get(resp.id).then((res:any) => {
+        this.dataTask = res;
+
+      })
+    })
+  }
 
   ngOnInit(): void {
     //Http Requests
-    this.service.get().then((resp) => {
+    this.service.getAll().then((resp) => {
       this.data = resp;
     });
 
@@ -62,4 +74,8 @@ export class TaskManagerComponent implements OnInit {
     this.service.post(this.dataTask);
     }
 
-}
+  put(){}
+
+
+
+  }
