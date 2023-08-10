@@ -1,101 +1,50 @@
-<div class="todo-container">
-  <header>
-    <h1>Agenda</h1>
-  </header>
-  <form id="todo-form">
-    <p>Adicione a tarefa</p>
-    <div class="form-control">
-      <div class="filter">
-        <h4>Mapa:</h4>
-        <!-- Aqui ficar atento pois onde temos um select penso que poderia ser substituido por um input -->
-        <select id="filter-select" name="map">
-          <option value="cruzamento">Cruzamento</option>
-          <option value="fcarvalho">Floresta de Carvalho</option>
-          <option value="pbauxita">Pedreira de Bauxita</option>
-          <option value="devorador">Devorador</option>
-          <option value="mineiro">Mineiro</option>
+<div class="container">
+  <div class="responsive">
+    <form>
+      <div class="form-group">
+        <label>Mapa:</label>
+        <select class="form-control" name="map" [(ngModel)]="dataTask.map">
+          <option>Cruzamento</option>
+          <option>Floresta Vermelha</option>
+          <option>Pedreira de Bauxita</option>
+          <option>Container</option>
+          <option>Minas Abandonadas</option>
         </select>
       </div>
-      <div class="input-control">
-        <input
-          name="players"
-          type="text"
-          id="names-input"
-          placeholder="Informe os nomes dos participantes"
-          [(ngModel)]="dataTask.players"
-        />
+
+      <div class="form-group">
+        <label>Jogadores:</label>
+        <input type="text" name="player1" [(ngModel)]="dataTask.player1" />
+        <input type="text" name="player2" [(ngModel)]="dataTask.player2" />
+        <input type="text" name="player3" [(ngModel)]="dataTask.player3" />
       </div>
-      <div class="input-control">
+
+      <div class="form-group">
+        <label>Requerimentos:</label>
         <input
           type="text"
-          name="requirements"
-          id="requirements-input"
-          placeholder="Informe os requisitos para a missão"
-          [(ngModel)]="dataTask.requirements"
+          name="requirement1"
+          [(ngModel)]="dataTask.requirement1"
+        />
+        <input
+          type="text"
+          name="requirement2"
+          [(ngModel)]="dataTask.requirement2"
+        />
+        <input
+          type="text"
+          name="requirement3"
+          [(ngModel)]="dataTask.requirement3"
         />
       </div>
 
-      <div class="input-control">
-        <input
-          type="text"
-          id="obs-input"
-          name="observation"
-          placeholder="Comentários adicionais Teste"
-          [(ngModel)]="dataTask.observation"
-        />
+      <div class="form-group">
+        <label>Data e Horário:</label>
+        <input type="text" name="date" [(ngModel)]="dataTask.date" />
       </div>
-      <button mat-button="raised" color="accent" type="submit" (click)="post()" >Submit true</button>
-      <button mat-button="raised" color="accent" type="submit" (click)="put()" >Submit false</button>
-    </div>
-  </form>
-<!--   <form id="edit-form" class="hide">
-    <p>Edite a tarefa</p>
-    <div class="form-control">
-      <div class="input-control">
-        <input type="text" id="edit-input" />
-        <button type="submit" >
-          <mat-icon>send</mat-icon>
-        </button>
-      </div>
-    </div>
-    <button id="cancel-edit-btn">Cancelar</button>
-  </form> -->
-  <div id="toolbar">
-    <div id="search">
-      <h4>Pesquisar:</h4>
-      <form>
-        <div class="input-control">
-          <input type="text" id="search-input" placeholder="Buscar" />
-          <button id="erase-button">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-      </form>
-    </div>
-    <div class="filter">
-      <h4>Filtrar:</h4>
-      <select id="filter-select">
-        <option value="all">Todos</option>
-        <option value="done">Feitos</option>
-        <option value="todo">A fazer</option>
-      </select>
-    </div>
-  </div>
-
-  <div id="todo-list" *ngFor="let k of data | keys">
-    <div class="todo">
-      <h3>{{ data[k].map }} </h3>
-      <br />
-      <h3>{{ data[k].observation }}</h3>
-      <button class="finish-todo">
-        <mat-icon class="finish-todo">check_circle_outline</mat-icon>
+      <button mat-button="raised" color="accent" type="submit" (click)="post()">
+        Salvar
       </button>
-      <button class="edit-todo" [routerLink]="['/task-manager', k]" >
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button class="remove-todo">
-        <mat-icon>remove_circle_outline</mat-icon>
-      </button>
-    </div>
+    </form>
   </div>
 </div>

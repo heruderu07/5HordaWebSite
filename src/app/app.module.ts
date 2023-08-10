@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MembersComponent } from './components/members/members.component';
 import { TaskManagerComponent } from './components/task-manager/task-manager.component';
-
+import { TaskListComponent } from './components/task-list/task-list.component';
 import { KeysPipe } from './pipes/Key.pipe';
 import { FormsModule } from '@angular/forms';
 
@@ -28,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     MainNavComponent,
     MembersComponent,
     TaskManagerComponent,
+    TaskListComponent,
     KeysPipe
   ],
   imports: [

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="responsive">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Mapa</th>
+          <th scope="col">Jogadores</th>
+          <th scope="col">Requerimentos</th>
+          <th scope="col">Data e Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let k of data | keys">
+          <th scope="row">1</th>
+          <td>{{data[k].map}}</td>
+          <td>
+            <li>{{data[k].player1}}</li> <li>{{data[k].player2}}</li> <li>{{data[k].player3}}</li>
+          </td>
+          <td>
+            <li>{{data[k].requirement1}}</li> <li>{{data[k].requirement2}}</li> <li>{{data[k].requirement3}}</li>
+          </td>
+          <td>{{data[k].date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
