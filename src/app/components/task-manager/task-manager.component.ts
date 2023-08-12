@@ -20,17 +20,24 @@ export class TaskManagerComponent implements OnInit {
     requirement3: '',
     date: '',
   };
+  buttonControlPostOrPut = true;
+  id: string = ''; //Used to manipulate buttonControlPostOrPut});
 
   constructor(
     private service: AxiosService,
-    /* private ActivedRouter: ActivatedRoute */
-  ) {
-   /*  this.ActivedRouter.params.subscribe((resp: any) => {
+    private ActivedRouter: ActivatedRoute) {
+    this.ActivedRouter.params.subscribe((resp: any) => {
       console.log(resp.id);
-      this.service.get(resp.id).then((res: any) => {
-        this.dataTask = res;
-      });
-    }); */
+      this.id=resp.id;
+      if (resp.id == 'new') { //manipulando dados através da rota http usando o id que consta no final da rota no caso 'new'
+        this.buttonControlPostOrPut;
+      } else {
+        this.buttonControlPostOrPut = false;
+        this.service.get(resp.id).then((res: any) => {
+          this.dataTask = res;
+        });
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -43,8 +50,15 @@ export class TaskManagerComponent implements OnInit {
   //Http Requests
   post() {
     this.service.post(this.dataTask);
-    console.log(this.dataTask)
+    console.log(this.dataTask);
   }
 
-  put() {}
+  put() {
+    this.service.put(this.dataTask, this.id);
+  }
+
+  delete() {
+    this.service.delete(this.id);
+  }
+
 }

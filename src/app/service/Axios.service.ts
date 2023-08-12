@@ -32,7 +32,6 @@ export class AxiosService {
 
   post(task: Task) {
     let body = JSON.stringify(task);
-    //antes estava Headers, alterei para AxiosHeaders pq o headers em baixo estava apontando erro
     let headers = new AxiosHeaders({
       'Content-Type': 'application/json'
     });
@@ -57,5 +56,14 @@ export class AxiosService {
       console.log(error);
     });
 
+  }
+  delete(key$:string){
+    let url = `${this.urltaskroot}/${key$}.json`;
+    return axios.delete(url).then(resp => {
+      console.log(resp);
+      return resp;
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 }
