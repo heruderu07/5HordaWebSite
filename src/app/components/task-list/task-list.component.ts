@@ -1,7 +1,6 @@
 import { AxiosService } from '../../service/Axios.service';
 import { Component, OnInit } from '@angular/core';
-import { Task } from 'src/app/interfaces/task.interface';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-task-list',
