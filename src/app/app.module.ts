@@ -19,6 +19,7 @@ import { TaskManagerComponent } from './components/task-manager/task-manager.com
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { KeysPipe } from './pipes/Key.pipe';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     MembersComponent,
     TaskManagerComponent,
     TaskListComponent,
-    KeysPipe
+    KeysPipe,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

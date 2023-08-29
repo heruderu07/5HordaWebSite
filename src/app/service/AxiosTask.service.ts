@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import axios, { AxiosHeaders } from 'axios';
-import { Task } from './../interfaces/task.interface';
+import { Task } from '../interfaces/task.interface';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AxiosService {
+export class AxiosTaskService {
   urltasks: string =    'https://horda-a5c2f-default-rtdb.firebaseio.com/tasks.json';
   urltaskroot: string = 'https://horda-a5c2f-default-rtdb.firebaseio.com/tasks';
   constructor() {}

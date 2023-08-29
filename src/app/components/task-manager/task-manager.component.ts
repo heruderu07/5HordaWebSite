@@ -1,4 +1,4 @@
-import { AxiosService } from '../../service/Axios.service';
+import { AxiosTaskService } from '../../service/AxiosTask.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/interfaces/task.interface';
 import { ActivatedRoute } from '@angular/router';
@@ -28,7 +28,7 @@ export class TaskManagerComponent implements OnInit {
 
 
   constructor(
-    private service: AxiosService,
+    private service: AxiosTaskService,
     private ActivedRouter: ActivatedRoute,
     router: Router
     ){

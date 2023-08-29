@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="responsive">
+    <div class="card text-center">
+      <div class="card-header">
+        <label>Criar conta</label>
+      </div>
+      <div class="card-body">
+        <div class="label-control">
+          <label>Username</label>
+        </div>
+        <input type="email" class="form-control" name="login" [(ngModel)]="dataMembers.login" />
+        <div class="label-control">
+          <label>Password</label>
+        </div>
+        <input type="text" class="form-control"  name="password" [(ngModel)]="dataMembers.password"/>
+
+      <div class="label-control">
+        <label>Nome</label>
+      </div>
+      <input type="text" class="form-control" name="nome" [(ngModel)]="dataMembers.nome"/>
+      <div class="label-control">
+        <label>Telefone</label>
+      </div>
+      <input type="text" class="form-control" name="telefone" [(ngModel)]="dataMembers.telefone" />
+    </div>
+      <div class="card-footer">
+        <button type="submit" (click)="post()" class="btn btn-secondary">Enviar</button>
+        <button [routerLink]="['/members']" class="btn btn-secondary">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>

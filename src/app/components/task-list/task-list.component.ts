@@ -1,4 +1,4 @@
-import { AxiosService } from '../../service/Axios.service';
+import { AxiosTaskService } from '../../service/AxiosTask.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
   data: any = {};
-  constructor(private service: AxiosService) {}
+  constructor(private service: AxiosTaskService) {}
 
   ngOnInit(): void {
     this.service.getAll().then((resp) => {
