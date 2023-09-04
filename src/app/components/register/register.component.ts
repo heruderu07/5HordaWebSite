@@ -18,13 +18,28 @@ export class RegisterComponent implements OnInit {
   constructor(private service: AxiosMembersService,) {}
 
   ngOnInit(): void {
-    //cuidado aqui!
-/*     const bcrypt = require('bcryptjs');
-    const jwt = require('jsonwebtoken'); */
+
   }
   post() {
+
+  if (!this.dataMembers.login){
+    return alert("Campo username em branco")
+  }
+  if (!this.dataMembers.nome){
+    return alert("Campo nome em branco")
+  }
+
+  if (!this.dataMembers.password){
+    return alert("Campo password em branco")
+  }
+
+  if (!this.dataMembers.telefone){
+    return alert("Campo telefone em branco")
+  }
+
+
+
     this.service.post(this.dataMembers);
-    console.log(this.dataMembers);
     this.dataMembers = {
       login: '',
       password: '',
