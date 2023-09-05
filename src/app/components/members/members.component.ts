@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./members.component.scss'],
 })
 export class MembersComponent implements OnInit {
-  constructor() {}
+  email = '' as string;
+  password = '' as string;
+
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
   }

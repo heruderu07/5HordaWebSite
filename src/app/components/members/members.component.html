@@ -1,23 +1,49 @@
 <div class="container">
   <div class="responsive">
-    <div class="card text-center">
+    <div class="card text-center" >
       <div class="card-header">
         <label>Login</label>
       </div>
-      <div class="card-body">
-        <div class="label-control">
-          <label>Username</label>
+        <div class="card-body">
+          <div class="label-control">
+            <label>Email</label>
+          </div>
+          <input
+            type="text"
+            name="email"
+            class="form-control"
+            [(ngModel)]="email"
+          />
+          <div class="label-control">
+            <label>Password</label>
+          </div>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            [(ngModel)]="password"
+          />
         </div>
-        <input type="email" class="form-control" />
-        <div class="label-control">
-          <label>Password</label>
+        <div class="card-footer">
+          <a [routerLink]="['/register']"> Criar conta</a>
+          <button
+            type="submit"
+            class="btn btn-secondary"
+            (click)="auth.emailSignin(this.email, this.password)">
+            Enviar
+          </button>
+          <button
+            type="submit"
+            class="btn btn-secondary"
+            (click)="auth.googleSignin()">
+            Google Login
+          </button>
         </div>
-        <input type="password" class="form-control" />
-      </div>
-      <div class="card-footer">
-        <a [routerLink]="['/register']"> Criar conta</a>
-        <button type="submit" class="btn btn-secondary">Enviar</button>
-      </div>
+      <div *ngIf="auth.error" style="color: red">{{ auth.error }}</div>
+    </div>
+    <div *ngIf="auth.user">
+      Logged as <b>{{ auth.user.email }}</b>
+      <button  class="btn btn-secondary" (click)="auth.signOut()" >Logout</button>
     </div>
   </div>
 </div>

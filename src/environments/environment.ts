@@ -1,16 +1,20 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+
 
 export const environment = {
-  production: false
+  firebase: {
+    projectId: 'horda-a5c2f',
+    appId: '1:341308517586:web:88d5e7d183b7d49ed0910b',
+    databaseURL: 'https://horda-a5c2f-default-rtdb.firebaseio.com',
+    storageBucket: 'horda-a5c2f.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyBSuUkWHbTkusWRgZNO94kwLAenIDpucG4',
+    authDomain: 'horda-a5c2f.firebaseapp.com',
+    messagingSenderId: '341308517586',
+    measurementId: 'G-G7EQ5Z1DR5',
+  },
+  production: false,
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+

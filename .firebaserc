@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "horda-a5c2f": {
+      "hosting": {
+        "5HordaWebSite": [
+          "horda-a5c2f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "horda-a5c2f"
+  }
+}
