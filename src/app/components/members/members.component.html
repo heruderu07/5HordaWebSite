@@ -1,5 +1,7 @@
 <div class="container">
   <div class="responsive">
+    <form>
+      <fieldset>
     <div class="card text-center" >
       <div class="card-header">
         <label>Login</label>
@@ -33,7 +35,7 @@
             Enviar
           </button>
           <button
-            type="submit"
+
             class="btn btn-secondary"
             (click)="auth.googleSignin()">
             Google Login
@@ -45,5 +47,7 @@
       Logged as <b>{{ auth.user.email }}</b>
       <button  class="btn btn-secondary" (click)="auth.signOut()" >Logout</button>
     </div>
+  </fieldset>
+</form>
   </div>
 </div>

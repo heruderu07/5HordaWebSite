@@ -35,6 +35,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,12 +71,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     authDomain: 'horda-a5c2f.firebaseapp.com',
     messagingSenderId: '341308517586',
     measurementId: 'G-G7EQ5Z1DR5',
-    })
-  /*   provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
- */
+    }),
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

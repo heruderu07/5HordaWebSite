@@ -1,6 +1,7 @@
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Injectable } from '@angular/core';
-import firebase from 'firebase/compat/app';
+import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider} from '@angular/fire/auth'
+
 
 
 
@@ -18,13 +19,14 @@ export class AuthService {
       const credential= await this.auth.signInWithEmailAndPassword(email, password);
       this.user = credential.user;
     } catch (error){
-      this.error = error;
+      this.error = ("Email ou senha incorretos");
     }
   }
 
-   async googleSignin(){
-     try{
 
+
+   /* async googleSignin(){
+     try{
        const provider = new firebase.auth.GoogleAuthProvider();
        const credential = await this.auth.signInWithPopup(provider);
        this.user = credential.user;
@@ -32,7 +34,20 @@ export class AuthService {
      } catch (error){
        this.error = error;
      }
-   }
+   } */
+
+
+   async googleSignin(){
+    return  this.auth.signInWithPopup(new GoogleAuthProvider).then(res => {
+
+      localStorage.setItem('token',JSON.stringify(res.user?.uid));
+      this.user = res.user
+
+
+  }, err => {
+    alert(err.message);
+  })
+}
 
    async signOut(){
      await this.auth.signOut();
